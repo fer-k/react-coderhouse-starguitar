@@ -11,6 +11,10 @@ h1, h2 {
   font-weight: 700;
 }
 
+ul {
+  list-style: none;
+}
+
 .App {
   margin-top: 60px;
 }
