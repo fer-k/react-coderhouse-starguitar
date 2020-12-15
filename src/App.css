@@ -1,16 +1,24 @@
-.App {
+body {
   text-align: center;
+  background-color: #FFFCF2;
+}
+
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+}
+
+h1, h2 {
+  font-weight: 700;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 8rem;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+/*   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  }
+  } */
 }
 
 .App-header {
