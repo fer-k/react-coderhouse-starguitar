@@ -11,8 +11,13 @@ h1, h2 {
   font-weight: 700;
 }
 
+.App {
+  margin-top: 60px;
+}
+
 .App-logo {
-  height: 8rem;
+  height: 35px;
+  margin-bottom: 20px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

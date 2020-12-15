@@ -1,22 +1,27 @@
 import React from 'react'
+import './NavBar.css';
+import { Route, NavLink, Switch } from 'react-router-dom';
+import Home from '../../Containers/Home';
+import Cart from '../../Containers/Cart'
+import ProductDetailContainer from '../../Containers/ProductDetailContainer'
 
 const NavBar = () => {
     return (
         <div>
-        <ul className="nav justify-content-center">
+        <ul className="nav main-nav justify-content-center">
         <li className="nav-item">
-          <a className="nav-link active" href="#">Active</a>
+          <NavLink exact to="/" className="nav-link">Productos</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Link</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link disabled" href="#">Disabled</a>
+          <NavLink exact to="/cart" className="nav-link">Carrito</NavLink>
         </li>
       </ul>
+      <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/cart" component={Cart}/>
+        <Route exact path="/:id" component={ProductDetailContainer}/>
+
+      </Switch>
       </div>
     )
 }
