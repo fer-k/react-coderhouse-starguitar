@@ -44,7 +44,17 @@ const removeProduct = (product) => {
 
     //chequear si el producto esta en el carrito
     const productInCart = getFromCart(product.id)
+    console.log(productInCart)
+    /*  */
     if(productInCart.amount > 1) {
+        console.log('hay mas de uno')
+        setCartList(
+            cartList.map((p) => p.id === product.id ? {...p, amount: p.amount - 1 } : p )
+        );
+    } else {
+        setCartList(cartList.filter(p => p.id !== product.id))
+    }
+    /* if(productInCart.amount > 1) {
         setCartList(
             cartList.filter((p) => product.id ? {amount: p.amount - 1 } : p )
         );
@@ -52,7 +62,7 @@ const removeProduct = (product) => {
         setCartList(
             cartList(cartList.filter(p => p.id !== product.id))
         );
-    }
+    } */
     //updatear precio y cantidad de items en el carrito
     setTotalPrice(totalPrice - product.price)
     setCartAmount(cartAmount - 1)

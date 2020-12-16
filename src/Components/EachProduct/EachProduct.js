@@ -6,7 +6,7 @@ import {useCartContext} from '../../Context/CartContext'
 
 const EachProduct = ({product}) => {
 
-    const {addProduct, removeProduct} = useCartContext();
+    const {addProduct} = useCartContext();
 
     return (
         <div key={product.id}>
