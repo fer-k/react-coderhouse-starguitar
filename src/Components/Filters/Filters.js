@@ -10,16 +10,16 @@ const Filters = () => {
         <div>
        <ul className="nav justify-content-center">
   <li className="nav-item">
-    <a className="nav-link" onClick={() => GetAll()} href="#">Todas</a>
+    <button className="nav-link" onClick={() => GetAll()}>Todas</button>
   </li>
   <li className="nav-item">
-    <a className="nav-link" onClick={() => GetByCategory("rock")} href="#">Rock</a>
+    <button className="nav-link" onClick={() =>GetByCategory("rock")}>Rock</button>
   </li>
   <li className="nav-item">
-    <a className="nav-link" onClick={() => GetByCategory("punk/metal")} href="#">Punk/Metal</a>
+    <button className="nav-link" onClick={() => GetByCategory("punk/metal")}>Punk/Metal</button>
   </li>
   <li className="nav-item">
-    <a className="nav-link" onClick={() => GetByCategory("blues/jazz/soul")} href="#">Otras</a>
+    <button className="nav-link" onClick={() => GetByCategory("blues/jazz/soul")}>Otras</button>
   </li>
 </ul>
 </div>
