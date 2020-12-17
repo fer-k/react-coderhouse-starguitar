@@ -56,7 +56,7 @@ const OrderContainer = () => {
            .finally(() => {
                SetLoading(false)
                GetAll();
-        });
+            });
     })
 
       
