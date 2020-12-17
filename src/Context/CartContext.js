@@ -24,7 +24,7 @@ const addProduct = (product) => {
         //esta en el carrito
         if(product.stock > productInCart.amount) {
             setCartList(
-                cartList.map((p) => p.id === product.id ? {...p, amount: p.amount + 1 } : p )
+                cartList.map((p) => p.id === product.id ? {...p, amount: p.amount + 1} : p )
             );
         } else {
             return alert('No hay más stock disponible')
@@ -54,22 +54,14 @@ const removeProduct = (product) => {
     } else {
         setCartList(cartList.filter(p => p.id !== product.id))
     }
-    /* if(productInCart.amount > 1) {
-        setCartList(
-            cartList.filter((p) => product.id ? {amount: p.amount - 1 } : p )
-        );
-    } else {
-        setCartList(
-            cartList(cartList.filter(p => p.id !== product.id))
-        );
-    } */
+
     //updatear precio y cantidad de items en el carrito
     setTotalPrice(totalPrice - product.price)
     setCartAmount(cartAmount - 1)
 }
 
     return (
-        <CartContext.Provider value={{addProduct, totalPrice , cartAmount, removeProduct, cartList}}>
+        <CartContext.Provider value={{addProduct, totalPrice , cartAmount, removeProduct, cartList,setCartAmount, setCartList, setTotalPrice}}>
             {children}
         </CartContext.Provider>
     );

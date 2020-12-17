@@ -13,6 +13,8 @@ const EachProduct = ({product}) => {
             <img src={product.imageId} className="product-img" alt={product.title} />
             <h2>{product.title}</h2>
             <p>{product.guitarrist}</p>
+            <p>{product.stock}</p>
+
             <p>$ {product.price}</p>
             <Link to={`/${product.id}`}><button>Detalles del Producto</button></Link>
             {product.stock > 0 ? <button onClick={() => addProduct(product)}>Agregar al carrito</button> : <p>Sin Stock</p>}

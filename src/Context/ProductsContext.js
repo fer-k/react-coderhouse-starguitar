@@ -57,7 +57,7 @@ const ProductsContextProvider = ({children}) => {
         console.log(SourceProducts.length)
 
     return (
-        <ProductsContext.Provider value={{SourceProducts, setProducts, GetAll, GetByCategory, IsLoading}}>
+        <ProductsContext.Provider value={{SourceProducts, setProducts, GetAll, GetByCategory, SetLoading, IsLoading}}>
             {children}
         </ProductsContext.Provider>
     );
