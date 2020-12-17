@@ -10,8 +10,8 @@ const DB = GetDB();
 
 const OrderContainer = () => {
 
-    const { cartList , totalPrice, setCartAmount, setCartList, setTotalPrice} = useCartContext();
-    const {GetAll , SetLoading} = useProductsContext();
+    const { cartList , totalPrice, setCartAmount, setCartList, setTotalPrice, sourceProducts} = useCartContext();
+    const {GetAll , SetLoading, SourceProducts, setProducts } = useProductsContext();
 
     const newOrderTem = {
         cliente:{nombre:"Roberto", telefono:"123 456 7890", email:"rober@mail.com",},
@@ -51,11 +51,11 @@ const OrderContainer = () => {
                 }
                 const returnedProduct = doc.data();
                 productToUpdate.update({stock: returnedProduct.stock - prod.amount})
+                GetAll();
             }))
             .catch((error) => console.log(error))
            .finally(() => {
                SetLoading(false)
-               GetAll();
             });
     })
 
