@@ -34,7 +34,6 @@ const OrderContainer = () => {
                 setCartList([])
                 setTotalPrice(0)
                 updateProduct(newOrder)
-                GetAll();
                 console.log("listo")
             })
     }
@@ -54,7 +53,10 @@ const OrderContainer = () => {
                 productToUpdate.update({stock: returnedProduct.stock - prod.amount})
             }))
             .catch((error) => console.log(error))
-           .finally(() => {SetLoading(false)});
+           .finally(() => {
+               SetLoading(false)
+               GetAll();
+        });
     })
 
       
