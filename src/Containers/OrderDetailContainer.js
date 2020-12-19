@@ -5,14 +5,11 @@ import {useCartContext} from '../Context/CartContext'
 const OrderDetailContainer = () => {
 
     const { cartList } = useCartContext();
-    
-    
     return (
 
         cartList.map((item, i) => {
-            
-                
-            return <li>
+
+            return <li key={i}>
             <OrderDetail prod={item}/>
             </li>
         }

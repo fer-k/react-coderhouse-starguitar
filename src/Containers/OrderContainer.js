@@ -6,14 +6,14 @@ import OrderDetailContainer from '../Containers/OrderDetailContainer'
 import {useProductsContext} from '../Context/ProductsContext'
 import { Link } from 'react-router-dom';
 import Loader from '../Components/Loader/Loader'
-import { Modal, Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import '../Components/OrderDetail/OrderDetail.css'
 
 const DB = GetDB();
 
 const OrderContainer = () => {
 
-    const { cartList , totalPrice, setCartAmount, setCartList, setTotalPrice,show, handleClose, handleShow} = useCartContext();
+    const { cartList , totalPrice, setCartAmount, setCartList, setTotalPrice,show, handleShow} = useCartContext();
     const {SetLoading, IsLoading } = useProductsContext();
     const [OrderId, setOrderId] = useState(""); 
 

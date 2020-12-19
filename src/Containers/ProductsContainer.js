@@ -6,16 +6,14 @@ const ProductsContainer = () => {
 
     const { SourceProducts } = useProductsContext();
     
-   
+// Recorro los productos en el carrito y cargo sus datos en el componenete eachproducts  
     return (
         SourceProducts.map((item, i) => {
-            
             return <div className="col-md-3">
-            <EachProduct product={item}/>
+                <EachProduct product={item}/>
             </div>
-            
-            
-        }
-        ))}
+    })
+        )
+}
 
 export default ProductsContainer

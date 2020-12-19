@@ -1,16 +1,19 @@
   
 import React, { createContext , useContext, useState} from 'react';
 
+
+// creacion del contexto
 export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 const CartContextProvider = ({children}) => {
 
+    // variables y modificadores
     const [cartList, setCartList] = useState([]);
     const [cartAmount, setCartAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
-// Modal
+// modificador para abrir y cerrar los modales
 const [show, setShow] = useState(false);
 
 const handleClose = () => setShow(false);
@@ -33,9 +36,9 @@ const addProduct = (product) => {
                 cartList.map((p) => p.id === product.id ? {...p, amount: p.amount + 1} : p )
             );
         } else {
+            // si se alcanzo el stock de productos disponibles abrir el modal con el mensaje y cortar la ejecucion de la funcion
             setShow(true)
             return
-            //return alert('No hay más stock disponible')
         }
     } else {
         // el producto no esta en el carrito // agregarlo y agregarle la propiedad amount = 1
@@ -52,13 +55,13 @@ const removeProduct = (product) => {
 
     //chequear si el producto esta en el carrito
     const productInCart = getFromCart(product.id)
-    console.log(productInCart)
-    /*  */
     if(productInCart.amount > 1) {
+        // si el producto tiene mas de 2 unidades restarle 1
         console.log('hay mas de uno')
         setCartList(
             cartList.map((p) => p.id === product.id ? {...p, amount: p.amount - 1 } : p )
         );
+        // si tiene 1 quitarlo del carrito
     } else {
         setCartList(cartList.filter(p => p.id !== product.id))
     }

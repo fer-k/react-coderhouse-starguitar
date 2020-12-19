@@ -1,8 +1,9 @@
+
 body {
   text-align: center;
   background-color: #FFFCF2;
 }
-
+ /* Estilos de texto */
 p, span {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -41,6 +42,7 @@ h4 {
   font-weight: 700;
 }
 
+/* separado */
 span.light {
   color:#9D9790;
 }
@@ -51,10 +53,14 @@ span.light {
   margin: 15px 0;
 }
 
+/* Lista */
+
 ul {
   list-style: none;
   padding: 0;
 }
+
+/* Estilo a links */
 
 a {
   color: #7C7874;
@@ -68,6 +74,7 @@ a.nav-link.active {
   color: #FF5A39;
 }
 
+/* margen top gral y logo */
 
 .App {
   margin-top: 60px;
@@ -77,6 +84,8 @@ a.nav-link.active {
   height: 35px;
   margin-bottom: 20px;
 }
+
+/* Botones */
 
 button.primary, button.secondary {
   box-shadow: none;
@@ -100,7 +109,7 @@ button.secondary {
   background-color: #7C7874;
 }
 
-.
+
 
 @media (prefers-reduced-motion: no-preference) {
 /*   .App-logo {
@@ -108,34 +117,13 @@ button.secondary {
   } */
 }
 
+/* Modals */
 .modal-header, .modal-footer {
   border:none;
 }
 
+/* clase para hacer inline block */
+
 .inline {
   display: inline-block;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

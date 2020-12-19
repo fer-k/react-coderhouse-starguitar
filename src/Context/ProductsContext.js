@@ -1,20 +1,23 @@
 import React, { createContext , useContext, useState, useEffect} from 'react';
 import { GetDB } from '../Tools/firebaseFactory';
 
+// creacion del contexto
 export const ProductsContext = createContext();
 export const useProductsContext = () => useContext(ProductsContext);
 
 const ProductsContextProvider = ({children}) => {
 
+    // variables y modificadores
+
     const [SourceProducts, setProducts] = useState([]);
     const DB = GetDB();
     const allProducts = DB.collection("guitars");
+    // modificador para activar el loader
     const [IsLoading, SetLoading] = useState(false);
+    // modificador para darle style active la opcion del filtro seleccionada
     const [ActiveFilter, SetActiveFilter] = useState("All");
 
-
-
-
+    // funcion para traer todos los productos de la base de datos
     function GetAll () {
         SetLoading(true)
         allProducts
@@ -32,6 +35,7 @@ const ProductsContextProvider = ({children}) => {
             }).finally(() => {})
     }
 
+    // funcion para filtrar los productos por categoria
     function GetByCategory (category) {
         SetLoading(true)
         const filter = allProducts.where("categoryId", "==", category);
@@ -51,13 +55,11 @@ const ProductsContextProvider = ({children}) => {
           .finally(() => {});
     }
 
+    // disparo getall al iniciar para que traiga los productos de la base de datos
     useEffect(() => {
         GetAll();
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-    
-
-        console.log(SourceProducts.length)
 
     return (
         <ProductsContext.Provider value={{SourceProducts, setProducts, GetAll, GetByCategory, SetLoading, IsLoading, ActiveFilter}}>

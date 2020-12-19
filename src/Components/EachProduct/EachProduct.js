@@ -2,13 +2,14 @@ import React from 'react';
 import './EachProduct.css'
 import { Link } from 'react-router-dom';
 import {useCartContext} from '../../Context/CartContext'
-import { Modal, Button } from 'react-bootstrap';
 
 
 
 const EachProduct = ({product}) => {
 
-    const {addProduct, show, handleClose} = useCartContext();
+    const {addProduct} = useCartContext();
+
+    //muestro los datos del producto y el boton para agregarlos al carrito. Si no tiene stock el boton no se muestra
 
     return (
         <div key={product.id}>
