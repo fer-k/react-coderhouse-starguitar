@@ -14,12 +14,12 @@ const ProductsContainer = () => {
     return (
         cartList.map((item, i) => {
             
-            return <div>
-                <ul>
+                
+            return <li>
             <CartEachProduct prod={item}/>
-            </ul>
-            </div>
+            </li>
         }
-        ))}
+        ))
+            }
 
 export default ProductsContainer

@@ -9,16 +9,15 @@ const CartEachProduct = ({prod}) => {
     
 
     return (
-        <div>
-            <li>
-                <img src={prod.imageId} className="product-cart-img" alt={prod.title} />
-                <p>{prod.title} x {prod.amount}</p>
-                <p>$ {prod.price * prod.amount}</p>
-            </li>
-            <button onClick={() => removeProduct(prod)}>Quitar del carrito</button>
-
-            </div>
-    )
+        <div className="cart-item-container">
+                <div className="inline product-cart-img-container">
+                    <img src={prod.imageId} className="product-cart-img" alt={prod.title} />
+                </div>
+                <div className="inline text-left cart-info">
+                <p >{prod.title} x {prod.amount} = ${prod.price * prod.amount}</p>
+                </div>
+                <button className="inline secondary" onClick={() => removeProduct(prod)}><i class="fas fa-minus"></i></button>
+        </div>    )
         }
 
 export default CartEachProduct

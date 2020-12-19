@@ -13,16 +13,22 @@ const Cart = () => {
       return (
         <div>
           <Title title="Carrito" />
-          <CartProductsContainer />
-          <p>{totalPrice}</p>
-          <Link to={`/orden`}><button>Confirmar Pedido</button></Link>
+          <ul className="cart-list-container">
+            <CartProductsContainer />
+            <div className="divider"></div>  
+          </ul>
+          <h4>$ {totalPrice}</h4>
+          <Link to={`/orden`}><button className="primary">Confirmar Pedido</button></Link>
 
         </div>
     )
     }
     return (
       <div>
+          <Title title="Carrito" />
+        <div className="detail-container">
         <p>No tenés ningún producto en el carrito</p>
+        </div>
       </div>
   ) 
     

@@ -3,7 +3,7 @@ body {
   background-color: #FFFCF2;
 }
 
-p {
+p, span {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   margin:0;
@@ -34,8 +34,26 @@ h3 {
   font-weight: 700;
 }
 
+h4 {
+  color:#FF5A39;
+  font-size: 1.3rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+span.light {
+  color:#9D9790;
+}
+
+.divider {
+  width: 100%;
+  border-top: solid 1px #FF5A39;
+  margin: 15px 0;
+}
+
 ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
@@ -70,7 +88,7 @@ button.primary, button.secondary {
   outline: none;
 }
 
-button.primary:hover, button.secondary:hover {
+button.primary:hover, button.secondary:hover, .btn-primary:hover {
   filter: brightness(90%);
 }
 
@@ -82,10 +100,20 @@ button.secondary {
   background-color: #7C7874;
 }
 
+.
+
 @media (prefers-reduced-motion: no-preference) {
 /*   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   } */
+}
+
+.modal-header, .modal-footer {
+  border:none;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .App-header {

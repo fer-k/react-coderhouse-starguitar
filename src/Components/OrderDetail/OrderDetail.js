@@ -1,10 +1,10 @@
 import React from 'react';
 
-const OrderDetail = () => {
+const OrderDetail = ({prod}) => {
 
     return (
         <div>
-          <p>orden</p>
+          <li>{prod.title} x {prod.amount}</li>
         </div>
     )
 }

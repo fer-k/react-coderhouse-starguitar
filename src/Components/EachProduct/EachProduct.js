@@ -18,21 +18,9 @@ const EachProduct = ({product}) => {
             <p>$ {product.price}</p>
             <Link to={`/${product.id}`}><button className="secondary"><i class="far fa-eye"></i></button></Link>
             {product.stock > 0 ? <button className="primary" onClick={() => addProduct(product)}><i class="fas fa-cart-plus"></i></button> : null}
-            <p>Stock: {product.stock}</p>
+            <p><span className="light">Stock: {product.stock}</span></p>
             
-            <div>
-                <Modal show={show} onHide={handleClose}>
-                    <Modal.Header closeButton>
-                   {/*  <Modal.Title>Modal heading</Modal.Title> */}
-                    </Modal.Header>
-                    <Modal.Body>No hay más stock disponible para agregar.</Modal.Body>
-                    <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Close
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-            </div>
+           
 
         </div>
     )

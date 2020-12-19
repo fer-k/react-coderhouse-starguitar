@@ -10,16 +10,17 @@ const ProductDetail = ({product}) => {
 
     return (
         <div key={product.id} className="row detail-container">
-            <div className="col-md-5 detail-img">
+            <div className="col-md-6 detail-img">
                 <img src={product.imageId[1]} className="detail-img" alt={product.title} />
             </div>
-            <div className="col-md-7 detail-info">
+            <div className="col-md-6 detail-info">
             <h1>{product.title}</h1>
             <h3>{product.guitarrist}</h3>
             <p>$ {product.price}</p>
+            <span className="light">Stock: {product.stock}</span>
+            <div className="divider"></div>
             <p>{product.description}</p>
             {product.stock > 0 ? <button className="primary" onClick={() => addProduct(product)}><i class="fas fa-cart-plus"></i></button> : null}
-            <p>Stock: {product.stock}</p>
 
             <div>
                 <Modal show={show} onHide={handleClose}>

@@ -2,17 +2,18 @@ import React, {useState} from 'react';
 import Title from '../Components/Title/Title'
 import { GetDB } from '../Tools/firebaseFactory';
 import {useCartContext} from '../Context/CartContext'
-import OrderDetail from '../Components/OrderDetail/OrderDetail'
+import OrderDetailContainer from '../Containers/OrderDetailContainer'
 import {useProductsContext} from '../Context/ProductsContext'
 import { Link } from 'react-router-dom';
 import Loader from '../Components/Loader/Loader'
 import { Modal, Button } from 'react-bootstrap';
+import '../Components/OrderDetail/OrderDetail.css'
 
 const DB = GetDB();
 
 const OrderContainer = () => {
 
-    const { cartList , totalPrice, setCartAmount, setCartList, setTotalPrice,show, handleClose, setShow, handleShow} = useCartContext();
+    const { cartList , totalPrice, setCartAmount, setCartList, setTotalPrice,show, handleClose, handleShow} = useCartContext();
     const {SetLoading, IsLoading } = useProductsContext();
     const [OrderId, setOrderId] = useState(""); 
 
@@ -78,21 +79,27 @@ const OrderContainer = () => {
         <div>
           <Title title="Confirmá tu pedido" />
           { IsLoading ? <Loader /> :
-                <div>
-                    <OrderDetail />
-          {cartList.length > 0 ? <button onClick={postNewOrder}>Confirmar</button> : <Link to={`/`}><button>Volver al inicio</button></Link>}
+                <div className="order-container">
+                    <h4>{newOrderTem.cliente.nombre}</h4>
+                    {cartList.length > 0 ? <p>El detalle de tu pedido es:</p> : <p>¡Muchas gracias por tu compra!</p>}
+                    <ul className="cart-list-container">
+                        <OrderDetailContainer />
+                        <div className="divider"></div>  
+                    </ul>
+                    {cartList.length > 0 ? <p>$ {totalPrice}</p> : null}
+                    {cartList.length > 0 ? <button className="primary" onClick={postNewOrder}>Confirmar</button> : <Link to={`/`}><button className="secondary">Volver al inicio</button></Link>}
                 </div>}
 
                 <div>
-                <Modal show={show} onHide={handleClose}>
+                <Modal show={show}>
                     <Modal.Header>
                    {/*  <Modal.Title>Modal heading</Modal.Title> */}
                     </Modal.Header>
-                    <Modal.Body>Se creó la orden bajo el id {OrderId}</Modal.Body>
+                    <Modal.Body>Se creó la orden bajo el ID: {OrderId}</Modal.Body>
                     <Modal.Footer>
-                    <Button variant="secondary" onClick={() => window.location.reload()}>
+                    <button className="secondary" onClick={() => window.location.reload()}>
                         Close
-                    </Button>
+                    </button>
                   </Modal.Footer>
                 </Modal>
             </div>
