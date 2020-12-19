@@ -18,7 +18,7 @@ const NavBar = () => {
           <NavLink exact to="/" className="nav-link" activeClassName="active">Productos</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink exact to="/cart" className="nav-link" activeClassName="active">({cartAmount}) Carrito</NavLink>
+          <NavLink exact to="/cart" className="nav-link" activeClassName="active"><p>({cartAmount}) <i class="fas fa-shopping-cart"></i></p></NavLink>
         </li>
       </ul>
       <Switch>

@@ -10,6 +10,10 @@ const ProductsContextProvider = ({children}) => {
     const DB = GetDB();
     const allProducts = DB.collection("guitars");
     const [IsLoading, SetLoading] = useState(false);
+    const [ActiveFilter, SetActiveFilter] = useState("All");
+
+
+
 
     function GetAll () {
         SetLoading(true)
@@ -18,16 +22,14 @@ const ProductsContextProvider = ({children}) => {
             .then((querySnapshot) => {
                 
                 if (querySnapshot.size === 0) {
-                    console.log("no resultados pa")
+                    console.log("No se encontraron resultados")
                 }
                 setProducts(querySnapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })))
                 SetLoading(false)
+                SetActiveFilter("All")
             }).catch((error) => {
                 console.log("Error buscando prods", error)
-            }).finally(() => {
-                console.log("listo")
-                console.log(SourceProducts)
-            })
+            }).finally(() => {})
     }
 
     function GetByCategory (category) {
@@ -43,6 +45,7 @@ const ProductsContextProvider = ({children}) => {
     
             setProducts(result.docs.map(doc => ({ ...doc.data(), id: doc.id })))
             SetLoading(false)
+            SetActiveFilter(category)
           })
           .catch((error) => console.log(error))
           .finally(() => {});
@@ -57,7 +60,7 @@ const ProductsContextProvider = ({children}) => {
         console.log(SourceProducts.length)
 
     return (
-        <ProductsContext.Provider value={{SourceProducts, setProducts, GetAll, GetByCategory, SetLoading, IsLoading}}>
+        <ProductsContext.Provider value={{SourceProducts, setProducts, GetAll, GetByCategory, SetLoading, IsLoading, ActiveFilter}}>
             {children}
         </ProductsContext.Provider>
     );

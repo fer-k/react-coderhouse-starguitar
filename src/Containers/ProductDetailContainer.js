@@ -14,7 +14,7 @@ const ProductDetailContainer = () => {
     return (
         products.map((item, i) => {
             
-            return <div className="col-md-3">
+            return <div>
             <ProductDetail product={item}/>
             </div>
             

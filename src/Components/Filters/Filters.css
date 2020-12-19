@@ -1,0 +1,23 @@
+button.filter {
+    color:#7C7874;
+    border: none;
+    background-color: #FFFCF2;
+    border-radius: 20px;
+    margin: 15px 3px;
+    padding: 3px 13px;
+    font-size: 1rem;
+    outline: none;
+}
+
+button.filter:hover {
+    color:#403D39;
+}
+
+button.filter.active {
+    color:#FF5A39;
+    border: none;
+}
+
+.nav.filters {
+    margin-bottom:45px ;
+}

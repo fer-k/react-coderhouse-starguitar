@@ -3,11 +3,34 @@ body {
   background-color: #FFFCF2;
 }
 
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin:0;
+}
+
+
 h1, h2, h3 {
   font-family: 'Roboto Slab', serif;
 }
 
 h1, h2 {
+  font-weight: 700;
+  color:#403D39;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  color:#FF5A39;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
 
@@ -35,6 +58,28 @@ a.nav-link.active {
 .App-logo {
   height: 35px;
   margin-bottom: 20px;
+}
+
+button.primary, button.secondary {
+  box-shadow: none;
+  border: none;
+  color:#FFFCF2;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin:15px 5px 10px;
+  outline: none;
+}
+
+button.primary:hover, button.secondary:hover {
+  filter: brightness(90%);
+}
+
+button.primary {
+  background-color: #FF5A39;
+}
+
+button.secondary {
+  background-color: #7C7874;
 }
 
 @media (prefers-reduced-motion: no-preference) {

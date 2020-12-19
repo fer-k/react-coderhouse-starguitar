@@ -4,22 +4,29 @@ import {useProductsContext} from '../../Context/ProductsContext'
 
 const Filters = () => {
 
-    const {GetAll, GetByCategory} = useProductsContext();
+
+
+    const {GetAll, GetByCategory, ActiveFilter} = useProductsContext();
+    console.log(ActiveFilter)
 
     return (
         <div>
-       <ul className="nav justify-content-center">
+       <ul className="nav justify-content-center filters">
   <li className="nav-item">
-    <button className="nav-link" onClick={() => GetAll()}>Todas</button>
+    {ActiveFilter === "All" ? <button className="nav-link filter active" onClick={() => GetAll()}>Todas</button> :
+    <button className="nav-link filter" onClick={() => GetAll()}>Todas</button>}
   </li>
   <li className="nav-item">
-    <button className="nav-link" onClick={() =>GetByCategory("rock")}>Rock</button>
+  {ActiveFilter === "rock" ? <button className="nav-link filter active " onClick={() =>GetByCategory("rock")}>Rock</button> :
+  <button className="nav-link filter" onClick={() =>GetByCategory("rock")}>Rock</button>}
   </li>
   <li className="nav-item">
-    <button className="nav-link" onClick={() => GetByCategory("punk/metal")}>Punk/Metal</button>
+    {ActiveFilter === "punk/metal" ? <button className="nav-link filter active" onClick={() => GetByCategory("punk/metal")}>Punk/Metal</button> :
+    <button className="nav-link filter" onClick={() => GetByCategory("punk/metal")}>Punk/Metal</button>}
   </li>
   <li className="nav-item">
-    <button className="nav-link" onClick={() => GetByCategory("blues/jazz/soul")}>Otras</button>
+    {ActiveFilter === "blues/jazz/soul" ? <button className="nav-link filter active" onClick={() => GetByCategory("blues/jazz/soul")}>Otras</button> :
+    <button className="nav-link filter" onClick={() => GetByCategory("blues/jazz/soul")}>Otras</button>}
   </li>
 </ul>
 </div>

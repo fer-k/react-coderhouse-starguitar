@@ -10,6 +10,12 @@ const CartContextProvider = ({children}) => {
     const [cartAmount, setCartAmount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
 
+// Modal
+const [show, setShow] = useState(false);
+
+const handleClose = () => setShow(false);
+const handleShow = () => setShow(true);
+
 //Obtener id del Producto en el carrito, si esta
     const getFromCart = id => {
         return cartList.find(product => product.id === id);
@@ -27,7 +33,9 @@ const addProduct = (product) => {
                 cartList.map((p) => p.id === product.id ? {...p, amount: p.amount + 1} : p )
             );
         } else {
-            return alert('No hay más stock disponible')
+            setShow(true)
+            return
+            //return alert('No hay más stock disponible')
         }
     } else {
         // el producto no esta en el carrito // agregarlo y agregarle la propiedad amount = 1
@@ -61,7 +69,7 @@ const removeProduct = (product) => {
 }
 
     return (
-        <CartContext.Provider value={{addProduct, totalPrice , cartAmount, removeProduct, cartList,setCartAmount, setCartList, setTotalPrice}}>
+        <CartContext.Provider value={{addProduct, totalPrice , cartAmount, removeProduct, cartList,setCartAmount, setCartList, setTotalPrice, show, handleClose, handleShow}}>
             {children}
         </CartContext.Provider>
     );
