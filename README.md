@@ -1,4 +1,22 @@
-# Getting Started with Create React App
+# Poyecto creado para el curso de React de Coderhouse - camada 8980
+
+## Qué es Star Guitar
+Es una tienda de guitarras ficticia, donde se venden guitarras de distintos íconos de la música.
+
+## Cómo está organizado
+- Usé un context para manejar el listado de productos y otro para el carrito de compras y sus funcionalidades
+- La lógica de los componentes la incluí en los componentes Containers
+- Y los Components solo muestran información
+
+## Se utilizó:
+- react
+- react-dom
+- react-router-dom
+- firebase (como base de datos para los productos)
+- react-bootstrap (solo para los modales)
+- bootstrap (para el layout en columnas)
+
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
