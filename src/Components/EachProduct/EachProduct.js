@@ -12,7 +12,7 @@ const EachProduct = ({product}) => {
     //muestro los datos del producto y el boton para agregarlos al carrito. Si no tiene stock el boton no se muestra
 
     return (
-        <div key={product.id}>
+        <div key={product.id} className="each-product">
             <img src={product.imageId[0]} className="product-img" alt={product.title} />
             <h2>{product.title}</h2>
             <h3>{product.guitarrist}</h3>
@@ -20,9 +20,6 @@ const EachProduct = ({product}) => {
             <Link to={`/${product.id}`}><button className="secondary"><i class="far fa-eye"></i></button></Link>
             {product.stock > 0 ? <button className="primary" onClick={() => addProduct(product)}><i class="fas fa-cart-plus"></i></button> : null}
             <p><span className="light">Stock: {product.stock}</span></p>
-            
-           
-
         </div>
     )
 }
