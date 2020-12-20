@@ -67,7 +67,6 @@ const OrderContainer = () => {
             }))
             .catch((error) => console.log(error))
             .finally(() => {
-//                window.location.reload();
                 SetLoading(false)
             });
     })
