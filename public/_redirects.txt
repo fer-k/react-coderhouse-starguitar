@@ -1,5 +1,2 @@
-w@5M3@sCf!Kn.P4
-
-whatinfo
-
-2777273675
+/* /index.html 200
+/cart /app/cart
