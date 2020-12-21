@@ -1,4 +1,4 @@
 /* /index.html 200
-/ /index.htm
-/cart /cart
-/orden /orden
+/ /index.html
+/cart ./cart
+/orden ./orden
