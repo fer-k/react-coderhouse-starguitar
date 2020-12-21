@@ -88,6 +88,7 @@ a.nav-link.active {
 
 /* Botones */
 
+
 button.primary, button.secondary {
   box-shadow: none;
   border: none;
@@ -96,10 +97,15 @@ button.primary, button.secondary {
   border-radius: 20px;
   margin:15px 5px 10px;
   outline: none;
+  
 }
 
 button.primary:hover, button.secondary:hover, .btn-primary:hover {
   filter: brightness(90%);
+}
+
+button.primary:active, button.secondary:active {
+  filter:brightness(70%)
 }
 
 button.primary {
