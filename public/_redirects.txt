@@ -1,1 +1,3 @@
 /* /index.html 200
+/cart /app/cart.html 200
+/order /app/orden.html 200
