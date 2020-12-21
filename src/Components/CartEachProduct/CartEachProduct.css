@@ -34,14 +34,20 @@
 } 
 
 .cart-info {
-    width: 100%;
+    width: 240px;
 }
+
 
 @media (max-width: 576px) {
     .cart-list-container {
         width: 100%;
         margin: 30px auto;
     }
+
+    .cart-info {
+        width: 80%;
+    }
+    
     
 }
 
